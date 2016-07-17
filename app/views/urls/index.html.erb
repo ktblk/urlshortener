@@ -1,0 +1,19 @@
+<%= form_for @url, url: urls_create_path do |f| %>
+    <div class="field" style="margin-top: 30px">
+      <%= f.label :url %>
+      <%= f.text_field :url, size: "50x5"%>
+    </div>
+
+
+    <div class="actions"><br>
+      <%= f.submit class: "btn btn-primary", style: "text-align: center; font-family: Menlo"%> <br>
+    </div>
+
+    <div>
+      <h2 style="text-align: center">Shortened URLs</h2> <br>
+      <% @urls.each do |u| %>
+        <p><a href="http://localhost:3000/urls/show/<%=u.id%>">http://localhost:3000/urls/show/<%=u.id%></a></p>
+        <%end%>
+    </div>
+
+<% end %>
